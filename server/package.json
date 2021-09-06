@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Q118/chatQL/issues"
   },
-  "homepage": "https://github.com/Q118/chatQL#readme"
+  "homepage": "https://github.com/Q118/chatQL#readme",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3",
+    "nodemon": "^2.0.12"
+  }
 }
