@@ -9,3 +9,17 @@ const link = new WebSocketLink({
         reconnect: true,
     },
 })
+
+export const client = new ApolloClient({
+    link, //websocket link
+    uri: 'http://localhost:4000/', //connect to server
+    cache: new InMemoryCache(),
+});
+
+export const Chat = () => {
+    return(
+        <div>
+            <h3>Welcome to chatQL!</h3>
+        </div>
+    )
+}
