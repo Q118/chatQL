@@ -1,0 +1,20 @@
+{
+  "name": "chat-q-l",
+  "version": "1.0.0",
+  "description": "real time chat application",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Q118/chatQL.git"
+  },
+  "author": "Shelby Rothman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Q118/chatQL/issues"
+  },
+  "homepage": "https://github.com/Q118/chatQL#readme"
+}
