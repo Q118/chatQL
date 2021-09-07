@@ -40,8 +40,8 @@ export const Chat = () =>{
 
     return(
         <Container>
-          <h3>Welcome to chatQL!</h3>
-          <Messages/>
+          <h3>Welcome to chatQL! A prototype chat application.</h3>
+          <Messages user={user}/>
           <Grid container spacing={2}>
             <Grid item xs={3}>
               <TextField onChange={ (e) => {
@@ -76,21 +76,22 @@ const POST_MESSAGE = gql`
 `;
 
 
-const Messages = () => {
-    const { data } = useSubscription(GET_MESSAGES);
-    if (!data) {
+const Messages = ({user}) =>{
+    const {data} = useSubscription(GET_MESSAGES)
+    if(!data){
         return null;
     }
     return (
-        <div style={{ marginBottom: '5rem' }}>
-            {data.messages.map(({ id, user, text }) => {
-                return (
-                    <div key={id} style={{ textAlign: 'right' }}>
-                        <p style={{ marginBottom: '0.3rem' }}>{user}</p>
-                        <Chip style={{ fontSize: '0.9rem' }} color='primary' label={text} />
-                    </div>
-                );
-            })}
-        </div>
-    );
-};
+      <div style={{marginBottom:"5rem"}}>
+        {data.messages.map(({id, user: messageUser, text})=>{
+          return(
+            <div key={id} style={{textAlign: user===messageUser?"right":"left"}}>
+              <p style={{marginBottom:"0.3rem"}}>{messageUser}</p>
+              <Chip style={{fontSize:"0.9rem"}} color={user===messageUser?"primary": "secondary"} label={text}/>
+            </div>
+          )
+        })}
+      </div>
+     )
+}
+
