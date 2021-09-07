@@ -2,5 +2,5 @@
 Learning GraphQL through building a small chat app. Websockets. graphql-yoga
 
 
-![](https://github.com/Q118/chatQL/blob/main/screenshot.png)
+![](https://raw.githubusercontent.com/Q118/chatQL/main/chatQL%20screenshot.png)
 
